@@ -1,11 +1,11 @@
-import signUpUser from './4-user-promise'
-import uploadPhoto from './5-photo-reject'
+import signUpUser from './4-user-promise';
+import uploadPhoto from './5-photo-reject';
 
 export default function handleProfileSignup(firstName, lastName, fileName) {
-  let arr = [];
+  const arr = [];
   return Promise.allSettled([signUpUser(firstName, lastName), uploadPhoto(fileName)])
     .then((result) => result.forEach((val) => {
-      if (val.status === 'fullfiled') arr.push(v);
+      if (val.status === 'fullfiled') arr.push(val);
       else arr.push({ status: val.status, value: val.reason.message });
       return arr;
     }));
