@@ -6,7 +6,7 @@ export default function handleProfileSignup(firstName, lastName, fileName) {
   return Promise.allSettled([signUpUser(firstName, lastName), uploadPhoto(fileName)])
     .then((result) => result.forEach((val) => {
       let arr = []
-      if (val.status === 'fullfiled') arr.push({ status: val.status, value: val.value });
+      if (val.status === 'fullfiled') arr.push(v);
       else arr.push({ status: val.status, value: val.reason.message });
       return arr;
     }));
