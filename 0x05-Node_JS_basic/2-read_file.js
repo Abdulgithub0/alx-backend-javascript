@@ -11,16 +11,14 @@ module.exports = function countStudents(_path) {
   content.forEach((line) => {
      student = line.split(',');
      if (student.includes('CS')) {
-     	const cs_student = student.filter(e => e !== 'CS' && isNaN(e));
-     	cs_count += cs_student.length;
-	cs_name += cs_student.join(', ') + ' ';
+     	cs_count += 1;
+     	cs_name += student[0] + ', '
      } else if (student.includes("SWE")){
-     	const swe_student = student.filter(e => e !== 'SWE' && isNaN(e));
-	swe_count += swe_student.length;
-	swe_name += swe_student.join(', ') + ' ';
+	swe_count += 1;
+	swe_name += student[0] + ', ';
     }
   });
   console.log(`Number of students: ${cs_count + swe_count}`);
-  console.log(`Number of students in CS: ${cs_count}. List: ${cs_name}`);
-  console.log(`Number of students in SWE: ${swe_count}. List: ${swe_name}`)
+  console.log(`Number of students in CS: ${cs_count}. List: ${cs_name.slice(0, -2)}`);
+  console.log(`Number of students in SWE: ${swe_count}. List: ${swe_name.slice(0, -2)}`)
 }
