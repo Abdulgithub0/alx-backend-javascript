@@ -3,10 +3,9 @@ const Utils = require('./utils.js');
 const expect = require('chai').expect;
 const sinon = require('sinon');
 
-//const calNumSpy = sinon.spy(Utils, 'calculateNumber');
+const calNumSpy = sinon.spy(Utils, 'calculateNumber');
 
 describe('Spy on calculateNumber', () => {
-   const calNumSpy = sinon.spy(Utils, 'calculateNumber');
    sendPaymentRequestApi(100, 1000);
    it('Testing if calculateNumber has been called only once', () => {
       expect(calNumSpy.calledTwice).to.be.true;
