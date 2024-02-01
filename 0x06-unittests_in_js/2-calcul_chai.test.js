@@ -20,4 +20,4 @@ describe('Test cases for CalculateNumber', () => {
 	   assert.equal(calculateNumber('DIVIDE', 20.9, 7), 3);
 	   assert.equal(calculateNumber('DIVIDE', 100, 0), 'Error');
 	});
-});
+})
