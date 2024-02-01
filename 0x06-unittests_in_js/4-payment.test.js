@@ -1,10 +1,10 @@
 const sendPaymentRequestApi = require('./4-payment');
 const Utils = require('./utils.js');
 const expect = require('chai').expect;
-const sinon = require('sinon');
+const { spy, stub } = require('sinon');
 
-const consoleSpy = sinon.spy(console, 'log');
-const calNumStub = sinon.stub(Utils, 'calculateNumber').returns(10);
+const consoleSpy = spy(console, 'log');
+const calNumStub = stub(Utils, 'calculateNumber').returns(10);
 
 describe('Stub on Util.calculateNumber method', () => {
    it('Testing if calculateNumber return 10 ', () => {
